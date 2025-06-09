@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+.test-main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-height: 100vh;
+    padding-bottom: 15vh;
+    position: relative;
+    background-color: #f0f4f9;
+}
+
+.test-header {
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-bg {
+    background-color: #ffffff;
+    margin: 0rem 5rem;
+    border-radius: 0.5rem;
+    padding: 1rem 0rem;
+    box-shadow: 1px 1px 5px #000000;
+}
+
+.header-subhead {
+    text-align: left;
+    padding-left: 5rem;
+    padding-right: 10rem;
+    font-size: 1.5rem;
+}
+
+.section-head {
+    text-align: left;
+    padding-left: 5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.form-a label {
+    text-align: left;
+    padding: 1rem 3rem;
+    display: block;
+    font-size: 1.2rem;
+}
+
+.form-a input {
+    border: 2px solid #000000;
+    display: flex;
+    align-items: flex-start;
+    margin: 0rem 3rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.select-opt {
+    border: 2px solid #000000;
+    display: flex;
+    align-items: flex-start;
+    margin: 0rem 3rem;
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+}
+
+.header-subhead-wrap {
+    border-bottom: 2px solid #000000;
+    margin: 0.5rem 3rem;
+}
+
+.section-b-radio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.radio-opt {
+    margin-right: -3.5rem;
+}
+
+.custom-radio-btn {
+    width: 25px;
+    height: 25px;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-radio-btn .checkmark {
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    border-radius: 50%;
+    background-color: #222;
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.custom-radio-btn input {
+    display: none;
+}
+
+.custom-radio-btn input:checked + .checkmark {
+    opacity: 1;
+}
+
+.submit-button {
+    border: 3px solid #000000;
+    margin: 1rem 0rem;
+    padding: 0.3rem 1rem;
+    color: #000000;
+    border-radius: 1.5rem;
+    text-decoration: none;
+    font-size: 2rem;
+}
+.submit-button:hover {
+    background-color: #000000;
+    border-color: #c4c7c5;
+    color: #ffffff;
+}
