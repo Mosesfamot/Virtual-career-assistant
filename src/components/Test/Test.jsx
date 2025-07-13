@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Test.css';
 import { Context } from '../../context/Context';
 
@@ -52,13 +53,20 @@ const performanceOptions = [
 ];
 
 export default function Test() {
-  const { onSent, response } = useContext(Context);
 
+  const { onSent } = useContext(Context);
   const [formData, setFormData] = useState({
-    name: '', age: '', gender: '--SELECT OPTION--',
-    classChoice: '--SELECT OPTION--', choiceMaker: '--SELECT OPTION--', dreamCareer: '',
-    sectionB: {}, sectionD: {},
+    name: '', 
+    age: '', 
+    gender: 'Male',
+    classChoice: 'Science',
+    choiceMaker: 'Parents',
+    dreamCareer: '',
+    sectionB: {}, 
+    sectionD: {},
   });
+
+  const navigate = useNavigate();
 
   const handleInputChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -117,11 +125,31 @@ export default function Test() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const prompt = buildPrompt();
+    const token = localStorage.getItem("token");
 
     try {
-      await onSent(prompt);
+      // Call onSent and receive the generated response
+      const generatedResponse = await onSent(prompt);
+
+      const res = await fetch("http://localhost:5000/api/submit-response", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({ prompt, response: generatedResponse })
+      });
+
+      const data = await res.json();
+      console.log("Response saved:", data);
+
+      if (res.ok) {
+        navigate('/main');
+      } else {
+        console.error("Save error:", data.error);
+      }
     } catch (err) {
-      console.error('Error:', err);
+      console.error("Submission failed:", err);
     }
   };
 
@@ -131,15 +159,15 @@ export default function Test() {
       <p className='header-subhead'>Instructions: Read each question carefully and answer honestly. There are no right or wrong answers just what feels most like you.</p>
 
       <h4 className='section-head'>SECTION A – DEMOGRAPHIC INFORMATION</h4>
-      <form onSubmit={handleSubmit} className="space-y-4 form-a">
+      <form onSubmit={handleSubmit} className="space-y-4 form-a" noValidate>
         <div className='section-bg'>
           <label>Name:</label>
           <input type="text" className="w-full border p-2" value={formData.name} onChange={e => handleInputChange('name', e.target.value)} required />
           <label>Age:</label>
           <input type="number" className="w-full border p-2" value={formData.age} onChange={e => handleInputChange('age', e.target.value)} required />
           <label>Gender:</label>
-          <select className="w-full border p-2 select-opt" value={formData.gender} onChange={e => handleInputChange('gender', e.target.value)}>
-            <option>--SELECT OPTION--</option>
+          <select className="w-full border p-2 select-opt" value={formData.gender} onChange={e => handleInputChange('gender', e.target.value)} required>
+            <option value="" disabled hidden>--SELECT OPTION--</option>
             <option>Male</option>
             <option>Female</option>
           </select>
@@ -154,7 +182,7 @@ export default function Test() {
                 <div key={`${group}-${i}`} className="section-b-radio">
                   <label>{label}?</label>
                   <span className='radio-opt'>YES</span>
-                  <label>
+                  <label className='radio-opt-label'>
                     <input className='custom-radio-btn' type="radio" name={`${group}-${i}`} value="yes" required onChange={e => handleRadioChange(group, i, e.target.value)} />
                     <span className='checkmark'></span> 
                   </label>
@@ -172,16 +200,16 @@ export default function Test() {
         <h4 className="font-bold mt-4 section-head">SECTION C – CHOICE INFLUENCE</h4>
         <div className='section-bg'>
           <label>Choice of class in senior class?</label>
-          <select className="w-full border p-2 select-opt" value={formData.classChoice} onChange={e => handleInputChange('classChoice', e.target.value)}>
-            <option>--SELECT OPTION--</option>
+          <select className="w-full border p-2 select-opt" value={formData.classChoice} onChange={e => handleInputChange('classChoice', e.target.value)} required>
+            <option value="" disabled hidden>--SELECT OPTION--</option>
             <option>Science</option>
             <option>Arts</option>
             <option>Commercial</option>
             <option>Social science</option>
           </select>
           <label>Who made the choice for you?</label>
-          <select className="w-full border p-2 select-opt" value={formData.choiceMaker} onChange={e => handleInputChange('choiceMaker', e.target.value)}>
-            <option>--SELECT OPTION--</option>
+          <select className="w-full border p-2 select-opt" value={formData.choiceMaker} onChange={e => handleInputChange('choiceMaker', e.target.value)} required>
+            <option value="" disabled hidden>--SELECT OPTION--</option>
             <option>Parents</option>
             <option>Teacher</option>
             <option>My friends</option>
@@ -194,12 +222,13 @@ export default function Test() {
 
         <h4 className="font-bold mt-4 section-head">SECTION D – ACADEMIC PERFORMANCE</h4>
         <div className='section-bg'>
-          <p className='header-subhead'>SELECT YOUR ACADEMIC PERFORMANCE SO FAR - SN | STATEMENT | VERY HIGH (VH) | HIGH (H) | AVERAGE (A) | LOW (L) | VERY LOW (VL)</p>
+          <p className='header-subhead header-subhead-section-d'>SELECT YOUR ACADEMIC PERFORMANCE SO FAR - SN | STATEMENT | VERY HIGH (VH) | HIGH (H) | AVERAGE (A) | LOW (L) | VERY LOW (VL)</p>
           {sectionDSubjects.map(subject => (
             <div key={subject} className="mt-1">
               <label>{subject}:</label>
-              <select className="w-full border p-2 select-opt" onChange={e => handleSelectChange(subject, e.target.value)}>
-                {performanceOptions.map(opt => <option key={opt}>{opt}</option>)}
+              <select defaultValue="" className="w-full border p-2 select-opt" onChange={e => handleSelectChange(subject, e.target.value)} required>
+                <option value="" disabled hidden>--SELECT OPTION--</option>
+                {performanceOptions.slice(1).map(opt => <option key={opt}>{opt}</option>)}
               </select>
             </div>
           ))}
@@ -207,12 +236,6 @@ export default function Test() {
 
         <button type="submit" className="submit-button">Submit</button>
       </form>
-
-      {response && (
-        <div id="result" className="bg-gray-100 border-l-4 border-blue-600 p-4 mt-6">
-          <pre>{response}</pre>
-        </div>
-      )}
     </div>
   );
 }

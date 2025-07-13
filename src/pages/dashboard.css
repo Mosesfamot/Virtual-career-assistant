@@ -1,0 +1,66 @@
+/* dashboard.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+}
+
+.dashboard-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-container h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+.response-card {
+  background-color: #f9fafb;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+  transition: background-color 0.3s ease;
+}
+
+.response-card:hover {
+  background-color: #f1f5f9;
+}
+
+.response-card h4 {
+  font-size: 1.1rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.response-card p {
+  font-size: 0.95rem;
+  color: #555;
+  white-space: pre-wrap;
+  margin: 0.25rem 0;
+}
+
+.response-card time {
+  font-size: 0.85rem;
+  color: #888;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .dashboard-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .response-card p {
+    font-size: 0.9rem;
+  }
+}

@@ -1,4 +1,9 @@
 @import "tailwindcss";
+html, body { /* Ensure both html and body take full height */
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
 
 .test-main {
     display: flex;
@@ -126,3 +131,599 @@
     border-color: #c4c7c5;
     color: #ffffff;
 }
+
+
+/* -------------------------------------- MEDIA QUERY SECTION MEDIA QUERY SECTION MEDIA QUERY SECTION -------------------------------------- */
+
+@media only screen and (max-width: 300px) {
+
+    .section-bg {
+    margin: 0 0.4rem;
+    padding: 1rem 0;
+    box-shadow: 1px 1px 5px #000000;
+    }
+
+    .test-header {
+        padding: 0.8rem;
+        font-size: 1.6rem;
+    }
+
+    .header-subhead {
+        padding-left: 3rem;
+        padding-right: 2rem;
+        font-size: 1rem;
+    }
+
+    .section-head {
+        padding-left: 3rem;
+        font-size: 1.2rem;
+        /* margin-top: 1rem; */
+    }
+
+    .form-a label {
+        font-size: 1rem;
+    }
+
+    .section-b-radio {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section-b-radio label {
+        font-size: 0.6rem;
+        margin-left: -0.3rem;
+    }
+
+    .radio-opt-label {
+        width: 8.5rem;
+    }
+
+    .radio-opt {
+        margin-right: -5.5rem;
+    }
+
+    .header-subhead-section-d {
+        font-size: 0.8rem;
+        padding-left: 3rem;
+        padding-right: 5rem;
+    }
+
+    .submit-button {
+        border: 2px solid #000000;
+        /* margin: 1rem 0rem; */
+        padding: 0.3rem 1.2rem;
+        /* color: #000000; */
+        border-radius: 1.3rem;
+        /* text-decoration: none; */
+        font-size: 1.8rem;
+    }
+
+}
+
+@media only screen and (min-width: 301px) and (max-width: 320px) {
+
+    .section-bg {
+    margin: 0 0.4rem;
+    padding: 1rem 0;
+    box-shadow: 1px 1px 5px #000000;
+    }
+
+    .test-header {
+        padding: 0.8rem;
+        font-size: 1.6rem;
+    }
+
+    .header-subhead {
+        padding-left: 3rem;
+        padding-right: 2rem;
+        font-size: 1rem;
+    }
+
+    .section-head {
+        padding-left: 3rem;
+        font-size: 1.2rem;
+        /* margin-top: 1rem; */
+    }
+
+    .form-a label {
+        font-size: 1rem;
+    }
+
+    .section-b-radio {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section-b-radio label {
+        font-size: 0.6rem;
+        margin-left: -0.3rem;
+    }
+
+    .radio-opt-label {
+        width: 8.5rem;
+    }
+
+    .radio-opt {
+        margin-right: -5.5rem;
+    }
+
+    .header-subhead-section-d {
+        font-size: 0.8rem;
+        padding-left: 3rem;
+        padding-right: 5rem;
+    }
+
+    .submit-button {
+        border: 2px solid #000000;
+        /* margin: 1rem 0rem; */
+        padding: 0.3rem 1.2rem;
+        /* color: #000000; */
+        border-radius: 1.3rem;
+        /* text-decoration: none; */
+        font-size: 1.8rem;
+    }
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 350px) {
+
+    .section-bg {
+    margin: 0 0.4rem;
+    padding: 1rem 0;
+    box-shadow: 1px 1px 5px #000000;
+    }
+
+    .test-header {
+        padding: 0.8rem;
+        font-size: 1.6rem;
+    }
+
+    .header-subhead {
+        padding-left: 3rem;
+        padding-right: 2rem;
+        font-size: 1rem;
+    }
+
+    .section-head {
+        padding-left: 3rem;
+        font-size: 1.2rem;
+        /* margin-top: 1rem; */
+    }
+
+    .form-a label {
+        font-size: 1rem;
+    }
+
+    .section-b-radio {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section-b-radio label {
+        font-size: 0.6rem;
+        margin-left: -0.3rem;
+    }
+
+    .radio-opt-label {
+        width: 8.5rem;
+    }
+
+    .radio-opt {
+        margin-right: -5.5rem;
+    }
+
+    .header-subhead-section-d {
+        font-size: 0.8rem;
+        padding-left: 3rem;
+        padding-right: 5rem;
+    }
+
+    .submit-button {
+        border: 2px solid #000000;
+        /* margin: 1rem 0rem; */
+        padding: 0.3rem 1.2rem;
+        /* color: #000000; */
+        border-radius: 1.3rem;
+        /* text-decoration: none; */
+        font-size: 1.8rem;
+    }
+
+}
+
+@media only screen and (min-width: 350px) and (max-width: 460px) {
+
+    .section-bg {
+    margin: 0 0.4rem;
+    padding: 1rem 0;
+    box-shadow: 1px 1px 5px #000000;
+    }
+
+    .test-header {
+        padding: 0.8rem;
+        font-size: 1.6rem;
+    }
+
+    .header-subhead {
+        padding-left: 3rem;
+        padding-right: 2rem;
+        font-size: 1rem;
+    }
+
+    .section-head {
+        padding-left: 3rem;
+        font-size: 1.2rem;
+        /* margin-top: 1rem; */
+    }
+
+    .form-a label {
+        font-size: 1rem;
+    }
+
+    .section-b-radio {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section-b-radio label {
+        font-size: 0.6rem;
+        margin-left: -0.3rem;
+    }
+
+    .radio-opt-label {
+        width: 8.5rem;
+    }
+
+    .radio-opt {
+        margin-right: -5.5rem;
+    }
+
+    .header-subhead-section-d {
+        font-size: 0.8rem;
+        padding-left: 3rem;
+        padding-right: 5rem;
+    }
+
+    .submit-button {
+        border: 2px solid #000000;
+        /* margin: 1rem 0rem; */
+        padding: 0.3rem 1.2rem;
+        /* color: #000000; */
+        border-radius: 1.3rem;
+        /* text-decoration: none; */
+        font-size: 1.8rem;
+    }
+
+}
+
+@media only screen and (min-width: 460px) and (max-width: 512px) {
+
+    .section-bg {
+    margin: 0 0.4rem;
+    padding: 1rem 0;
+    box-shadow: 1px 1px 5px #000000;
+    }
+
+    .test-header {
+        padding: 0.8rem;
+        font-size: 1.6rem;
+    }
+
+    .header-subhead {
+        padding-left: 3rem;
+        padding-right: 2rem;
+        font-size: 1rem;
+    }
+
+    .section-head {
+        padding-left: 3rem;
+        font-size: 1.2rem;
+        /* margin-top: 1rem; */
+    }
+
+    .form-a label {
+        font-size: 1rem;
+    }
+
+    .section-b-radio {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section-b-radio label {
+        font-size: 0.6rem;
+        margin-left: -0.3rem;
+    }
+
+    .radio-opt-label {
+        width: 8.5rem;
+    }
+
+    .radio-opt {
+        margin-right: -5.5rem;
+    }
+
+    .header-subhead-section-d {
+        font-size: 0.8rem;
+        padding-left: 3rem;
+        padding-right: 5rem;
+    }
+
+    .submit-button {
+        border: 2px solid #000000;
+        /* margin: 1rem 0rem; */
+        padding: 0.3rem 1.2rem;
+        /* color: #000000; */
+        border-radius: 1.3rem;
+        /* text-decoration: none; */
+        font-size: 1.8rem;
+    }
+
+}
+
+@media only screen and (min-width: 512px) and (max-width: 552px) {
+
+    .section-bg {
+    margin: 0rem 1rem;
+    padding: 1rem 0rem;
+    box-shadow: 1px 1px 5px #000000;
+    }
+
+    .test-header {
+        padding: 0.8rem;
+        font-size: 1.6rem;
+    }
+
+    .header-subhead {
+        padding-left: 3rem;
+        padding-right: 2rem;
+        font-size: 1rem;
+    }
+
+    .section-head {
+        padding-left: 3rem;
+        font-size: 1.2rem;
+        /* margin-top: 1rem; */
+    }
+
+    .form-a label {
+        font-size: 1rem;
+    }
+
+    .section-b-radio {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section-b-radio label {
+        font-size: 0.7rem;
+        margin-left: -0.3rem;
+    }
+
+    .radio-opt-label {
+        width: 8.5rem;
+    }
+
+    .radio-opt {
+        margin-right: -5.5rem;
+    }
+
+    .header-subhead-section-d {
+        font-size: 0.8rem;
+        padding-left: 3rem;
+        padding-right: 5rem;
+    }
+
+    .submit-button {
+        border: 2px solid #000000;
+        /* margin: 1rem 0rem; */
+        padding: 0.3rem 1.2rem;
+        /* color: #000000; */
+        border-radius: 1.3rem;
+        /* text-decoration: none; */
+        font-size: 1.8rem;
+    }
+
+}
+
+@media only screen and (min-width: 552px) and (max-width: 747px) {
+
+    .test-header {
+        padding: 0.8rem;
+        font-size: 1.8rem;
+    }
+
+    .header-subhead {
+        /* text-align: left;
+        padding-left: 5rem;
+        padding-right: 10rem; */
+        font-size: 1.2rem;
+    }
+
+    .section-head {
+        /* padding-left: 5rem; */
+        font-size: 1.3rem;
+        /* margin-top: 1rem; */
+    }
+
+    .form-a label {
+        font-size: 1.1rem;
+    }
+
+    .section-b-radio {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section-b-radio label {
+        font-size: 0.9rem;
+    }
+
+    .radio-opt-label {
+        width: 10rem;
+    }
+
+    .radio-opt {
+        margin-right: -5rem;
+    }
+
+    .header-subhead-section-d {
+        font-size: 1rem;
+        padding-left: 3rem;
+        padding-right: 5rem;
+    }
+
+    .submit-button {
+        border: 2px solid #000000;
+        /* margin: 1rem 0rem; */
+        padding: 0.3rem 1.2rem;
+        /* color: #000000; */
+        border-radius: 1.3rem;
+        /* text-decoration: none; */
+        font-size: 1.8rem;
+    }
+
+}
+
+@media only screen and (min-width: 747px) and (max-width: 800px) {
+
+    .test-header {
+        padding: 0.8rem;
+        font-size: 1.8rem;
+    }
+
+    .header-subhead {
+        /* text-align: left;
+        padding-left: 5rem;
+        padding-right: 10rem; */
+        font-size: 1.2rem;
+    }
+
+    .section-head {
+        /* padding-left: 5rem; */
+        font-size: 1.3rem;
+        /* margin-top: 1rem; */
+    }
+
+    .form-a label {
+        font-size: 1.1rem;
+    }
+
+    .section-b-radio {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section-b-radio label {
+        font-size: 0.9rem;
+    }
+
+    .radio-opt-label {
+        width: 10rem;
+    }
+
+    .radio-opt {
+        margin-right: -5rem;
+    }
+
+    .header-subhead-section-d {
+        font-size: 1rem;
+        padding-left: 3rem;
+        padding-right: 5rem;
+    }
+
+    .submit-button {
+        border: 2px solid #000000;
+        /* margin: 1rem 0rem; */
+        padding: 0.3rem 1.2rem;
+        /* color: #000000; */
+        border-radius: 1.3rem;
+        /* text-decoration: none; */
+        font-size: 1.8rem;
+    }
+
+}
+
+@media only screen and (min-width: 800px) and (max-width: 976px) {
+    
+    .test-header {
+        padding: 0.8rem;
+        font-size: 1.8rem;
+    }
+
+    .header-subhead {
+        /* text-align: left;
+        padding-left: 5rem;
+        padding-right: 10rem; */
+        font-size: 1.3rem;
+    }
+
+    .section-head {
+        /* padding-left: 5rem; */
+        font-size: 1.3rem;
+        /* margin-top: 1rem; */
+    }
+
+    .form-a label {
+        /* text-align: left; */
+        /* padding: 1rem 3rem; */
+        /* display: block; */
+        font-size: 1.1rem;
+    }
+
+    .section-b-radio {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section-b-radio label {
+        font-size: 0.9rem;
+    }
+
+    .radio-opt-label {
+        width: 10rem;
+    }
+
+    .radio-opt {
+        margin-right: -5rem;
+    }
+
+    .header-subhead-section-d {
+        font-size: 1rem;
+        padding-left: 3rem;
+        padding-right: 5rem;
+    }
+
+    .submit-button {
+        border: 2px solid #000000;
+        /* margin: 1rem 0rem; */
+        padding: 0.3rem 1.2rem;
+        /* color: #000000; */
+        border-radius: 1.3rem;
+        /* text-decoration: none; */
+        font-size: 1.8rem;
+    }
+}
+
+@media only screen and (min-width: 977px) and (max-width: 1024px) {}
+
+@media only screen and (min-width: 1025px) and (max-width: 1128px) {}
+
+@media only screen and (min-width: 1129px) and (max-width: 1424px) {}
