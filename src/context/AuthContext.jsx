@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (username, email, password) => {
-    await axios.post(`${import.meta.env.VITE_BACKEND_URL}auth/register`, { username, email, password });
+    await axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/register`, { username, email, password });
   };
 
   const logout = () => {
