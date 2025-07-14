@@ -131,7 +131,7 @@ export default function Test() {
       // Call onSent and receive the generated response
       const generatedResponse = await onSent(prompt);
 
-      const res = await fetch("http://localhost:5000/api/submit-response", {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/submit-response`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
